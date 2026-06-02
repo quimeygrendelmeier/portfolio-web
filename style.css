@@ -1,0 +1,278 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #090221;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1{
+    font-size: 1.25rem;
+}
+
+.profile-card{
+    width: 100%;
+    max-width: 550px;
+    height: 220px;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    padding-top: 50px;
+    margin: 30px;
+}
+
+.profile-pic{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 15%;
+    box-shadow: 0 10px 20px rgb(102 102 102 / 30%);
+}
+
+.profile-content p{
+    max-width: 250px;
+    font-size: 13px;
+    padding: 5px 0;
+    color: #8d8d8d;
+}
+
+.socials{
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+.socials a{
+    text-decoration: none;
+    display: inline-block;
+    transition: transform .2s ease;
+}
+
+.socials a:hover{
+    transform: translateY(-3px);
+}
+
+.ri-linkedin-box-line{
+    color: #0077b5;
+}
+
+.ri-github-fill{
+    color: #181717;
+}
+
+.ri-mail-line{
+    color: #EA4335;
+}
+
+.btns{
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.btns a{
+    width: 120px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: .3s;
+}
+
+.btns a:hover{
+    transform: translateY(-2px);
+}
+
+.btns a:nth-child(1){
+    background-color: #000;
+    color: #fff;
+}
+
+.btns a:nth-child(2){
+    background-color: #e7e7e7;
+    color: #000;
+}
+
+/* ESTILO PARA proyectos.html*/
+
+.projects{
+    width: 100%;
+    max-width: 650px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.projects h1{
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.project-card{
+    text-align: center;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 20px rgb(0 0 0 / 10%);
+    transition: transform .3s ease;
+}
+
+.project-card:hover{
+    transform: translateY(-3px);
+}
+
+.projects h1{
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+.project-card h2{
+    margin-bottom: 10px;
+}
+
+.project-card p{
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.tech-stack{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tech-stack span{
+    background: #f0f0f0;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: .8rem;
+}
+
+.project-links{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.project-links a{
+    width: 120px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    border-radius: 5px;
+    transition: .3s;
+}
+
+.project-links a:first-child{
+    background: #000;
+    color: white;
+}
+
+.project-links a:last-child{
+    background: #e7e7e7;
+    color: black;
+}
+
+.project-links a:hover{
+    transform: translateY(-2px);
+}
+
+.back-btn{
+    display: block;
+    width: fit-content;
+    margin: 40px auto;
+    padding: 12px 20px;
+    background: white;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: .3s;
+}
+
+.back-btn:hover{
+    transform: translateY(-2px);
+}
+
+/*--------------------------------*/
+
+@media (max-width: 600px){
+
+    .profile-card{
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+    }
+
+    .profile-pic{
+        display: block;
+        margin: 0 auto;
+    }
+
+    .profile-content{
+        text-align: center;
+    }
+
+    .socials{
+        justify-content: center;
+    }
+
+    .btns{
+        height: auto;
+        gap: 10px;
+    }
+
+/* ESTILO PARA proyectos.html*/
+
+    .projects{
+        max-width: 900px;
+        margin: 60px auto;
+        padding: 0 20px;
+    }
+
+    .projects h1{
+        font-size: 2rem;
+    }
+
+    .projects h2{
+        text-align: center;
+    }
+
+    .project-card{
+        padding: 20px;
+    }
+
+    .project-links{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-links a{
+        width: 120px;
+    }
+
+/*--------------------------------*/
+
+}

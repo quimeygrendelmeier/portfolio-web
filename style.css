@@ -5,22 +5,25 @@
 }
 
 body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.home-page{
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #090221;
-    font-family: 'Poppins', sans-serif;
 }
 
 h1{
-    font-size: 1.25rem;
+    font-size: 1.5rem;
 }
 
 .profile-card{
     width: 100%;
     max-width: 550px;
-    height: 220px;
+    height: 250px;
     background-color: #fff;
     border-radius: 10px;
     display: flex;
@@ -29,6 +32,11 @@ h1{
     padding: 40px;
     padding-top: 50px;
     margin: 30px;
+    transition: transform .3s ease;
+}
+
+.profile-card:hover{
+    transform: translateY(-5px);
 }
 
 .profile-pic{
@@ -40,11 +48,15 @@ h1{
     box-shadow: 0 10px 20px rgb(102 102 102 / 30%);
 }
 
-.profile-content p{
-    max-width: 250px;
+.profile-content p,
+.project-card p{
     font-size: 13px;
-    padding: 5px 0;
     color: #8d8d8d;
+}
+
+.profile-content p{
+    padding: 5px 0;
+    overflow-wrap: anywhere;
 }
 
 .socials{
@@ -59,11 +71,7 @@ h1{
     transition: transform .2s ease;
 }
 
-.socials a:hover{
-    transform: translateY(-3px);
-}
-
-.ri-linkedin-box-line{
+.ri-linkedin-box-fill{
     color: #0077b5;
 }
 
@@ -82,73 +90,80 @@ h1{
     justify-content: space-evenly;
 }
 
-.btns a{
+.btns a,
+.project-links a{
     width: 120px;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    border-radius: 3px;
+    border-radius: 5px;
     transition: .3s;
 }
 
-.btns a:hover{
+.btns a:hover,
+.socials a:hover,
+.project-links a:hover,
+.back-btn:hover{
     transform: translateY(-2px);
 }
 
-.btns a:nth-child(1){
-    background-color: #000;
-    color: #fff;
+.btns a:nth-child(1),
+.project-links a:first-child{
+    background: #000;
+    color: white;
 }
 
-.btns a:nth-child(2){
-    background-color: #e7e7e7;
-    color: #000;
+.btns a:nth-child(2),
+.project-links a:last-child{
+    background: #e7e7e7;
+    color: black;
 }
 
-/* ESTILO PARA proyectos.html*/
+/*----- proyectos.html -----*/
+
+.projects-page{
+    min-height: 100vh;
+    background-color: #090221;
+}
 
 .projects{
-    width: 100%;
-    max-width: 650px;
-    margin: 60px auto;
+    width: calc(100% - 40px);
+    margin: 40px auto;
     padding: 0 20px;
-}
-
-.projects h1{
-    color: white;
-    text-align: center;
-    margin-bottom: 40px;
+    
 }
 
 .project-card{
+    width: 100%;
+    max-width: 550px;
     text-align: center;
-    background: white;
-    padding: 25px;
+    background-color: #fff;
     border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 10px 20px rgb(0 0 0 / 10%);
+    padding: 20px;
+    margin: 25px auto;
+    box-shadow: 0 4px 20px rgb(0 0 0 / 15%);
     transition: transform .3s ease;
 }
 
 .project-card:hover{
-    transform: translateY(-3px);
+    transform: translateY(-5px);
 }
 
 .projects h1{
     color: white;
     text-align: center;
-    margin-bottom: 40px;
-    font-size: 2.5rem;
+    margin-top: 30px;
+    font-size: 1.5rem;
 }
 
 .project-card h2{
     margin-bottom: 10px;
+    font-size: 1.25rem;
 }
 
 .project-card p{
-    color: #666;
     line-height: 1.5;
     margin-bottom: 15px;
 }
@@ -170,40 +185,14 @@ h1{
 .project-links{
     display: flex;
     justify-content: center;
-    gap: 10px;
-}
-
-.project-links a{
-    width: 120px;
-    height: 40px;
-
-    display: flex;
     align-items: center;
-    justify-content: center;
-
-    text-decoration: none;
-    border-radius: 5px;
-    transition: .3s;
-}
-
-.project-links a:first-child{
-    background: #000;
-    color: white;
-}
-
-.project-links a:last-child{
-    background: #e7e7e7;
-    color: black;
-}
-
-.project-links a:hover{
-    transform: translateY(-2px);
+    gap: 10px;
 }
 
 .back-btn{
     display: block;
     width: fit-content;
-    margin: 40px auto;
+    margin: 0 auto;
     padding: 12px 20px;
     background: white;
     color: black;
@@ -212,27 +201,28 @@ h1{
     transition: .3s;
 }
 
-.back-btn:hover{
-    transform: translateY(-2px);
-}
-
-/*--------------------------------*/
-
 @media (max-width: 600px){
 
     .profile-card{
         flex-direction: column;
         height: auto;
         gap: 20px;
+        width: calc(100% - 40px);
+        margin: 20px auto;
+        padding: 25px;
     }
 
     .profile-pic{
         display: block;
-        margin: 0 auto;
+        margin: 0 auto 15px auto;
     }
 
     .profile-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
+        gap: 8px;
     }
 
     .socials{
@@ -244,35 +234,25 @@ h1{
         gap: 10px;
     }
 
-/* ESTILO PARA proyectos.html*/
-
-    .projects{
-        max-width: 900px;
-        margin: 60px auto;
-        padding: 0 20px;
-    }
-
-    .projects h1{
-        font-size: 2rem;
-    }
-
-    .projects h2{
-        text-align: center;
-    }
-
-    .project-card{
-        padding: 20px;
-    }
+/*-----proyectos.html-----*/
 
     .project-links{
         flex-direction: column;
-        align-items: center;
     }
+}
 
-    .project-links a{
-        width: 120px;
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
     }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-/*--------------------------------*/
-
+.profile-card,
+.project-card{
+    animation: fadeIn .5s ease;
 }
